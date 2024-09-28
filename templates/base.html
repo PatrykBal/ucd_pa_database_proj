@@ -19,77 +19,77 @@
     <!-- NAV BAR -->
    
     <nav class="navbar navbar-expand-lg" style="background-color: white;">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/" style="font-family: Ariel; font-size: 30px;">Vera</a>
-              </li>
-  
-              <li class="nav-item">
-                <a class="nav-link text-grey" href="#" style="font-size: 17px;">About Us</a>
-              </li>
-  
-              <li class="nav-item">
-                <a class="nav-link text-grey" href="#" style="font-size: 17px;">Contact us</a>
-              </li>
-            </ul>
-  
-            <form class="d-flex" role="search" action="/search" style="margin-right: 170px;" method="POST">
-              <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-secondary" type="submit">Search</button>
-            </form>
-          </div>
-  
-          
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  
-            <li class="nav-item mx-2" id="items">
+          <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
               
-             
-              <a class="nav-link text-grey" href="/cart"><span class="badge bg-success"></span> Cart
-                <i class="fa-solid fa-cart-shopping"></i>
-              </a>
-        
-              
-            </li>
-  
-            <li class="nav-item mx-2" id="items">
-              <a class="nav-link text-grey" href="#"><span class="badge bg-success"></span> WishList
-                <i class="fa-solid fa-heart"></i>
-              </a>
-            </li>
-  
-            
-            <li class="nav-item dropdown mx-2">
-              <a class="nav-link dropdown-toggle text-grey" href="#" role="button", id="profileDropdown" 
-              data-bs-toggle="dropdown" aria-hidden="false">
-                Account
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-  
-               
-                <li><a class="dropdown-item" href="/profile">Profile <i class="fa-solid fa-user"></i></a></li>
-                <li><a class="dropdown-item" href="/orders">Orders <i class="fa-solid fa-truck-fast"></i></a></li>
-                <li><a class="dropdown-item" href="/logout">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
-  
-                
-                <li><a class="dropdown-item" href="/login">Login <i class="fa-solid fa-right-to-bracket"></i></a></li>
-  
-  
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/" style="font-family: Ariel; font-size: 30px;">Vera</a>
+                  </li>
               </ul>
   
-            </li>
+              
+              <ul class="navbar-nav mx-auto">
+                  <li class="nav-item">
+                      <a class="nav-link text-grey" href="#" style="font-size: 17px;">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-grey" href="#" style="font-size: 17px;">Contact Us</a>
+                  </li>
+              </ul>
   
-          </ul>
+             
+              <form class="d-flex" role="search" action="/search" style="margin-right: 50px;" method="POST">
+                  <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-secondary" type="submit">Search</button>
+              </form>
   
+              <ul class="navbar-nav">
+                  <li class="nav-item mx-2" id="items">
+                      <a class="nav-link text-grey" href="/cart">
+                          <span class="badge bg-success"></span> Cart
+                          <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+                  </li>
+                  <li class="nav-item mx-2" id="items">
+                      <a class="nav-link text-grey" href="#">
+                          <span class="badge bg-success"></span> WishList
+                          <i class="fa-solid fa-heart"></i>
+                      </a>
+                  </li>
+                  <li class="nav-item dropdown mx-2">
+                      <a class="nav-link dropdown-toggle text-grey" href="#" role="button" id="profileDropdown"
+                          data-bs-toggle="dropdown" aria-hidden="false">
+                          Account
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                          <li><a class="dropdown-item" href="/profile">Profile <i class="fa-solid fa-user"></i></a></li>
+                          <li><a class="dropdown-item" href="/orders">Orders <i class="fa-solid fa-truck-fast"></i></a></li>
+                          <li><a class="dropdown-item" href="/logout">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                          <li><a class="dropdown-item" href="/login">Login <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
   
-        </div>
-      </nav>
     
+
+{% block body %}
+
+
+{% endblock %}
+
+<footer class="container-fluid  text-center p-2 mt-5" style="background-color: #ffffff; color: #000000">
+  <a href="https://github.com/Frost-Codes" style="color: #000000;">Vera</a> | <span>
+    <i class="fa-sharp fa-regular fa-copyright"></i></span> 2024 All rights reserved
+
+</footer>
 
 
 
