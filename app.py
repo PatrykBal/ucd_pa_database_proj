@@ -1,4 +1,9 @@
-from routes import app 
+from flask import Flask, render_template
+
+
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = ' dhuiqwhfudeiwf fewjfhiewf'
 
 
 
@@ -6,7 +11,7 @@ from routes import app
 @app.route('/')
 @app.route('/home')
 def home():
-    return 'This is the home page'
+    return render_template('base.html')
 
 @app.route('/login')
 def login():
