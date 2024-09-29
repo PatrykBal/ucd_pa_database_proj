@@ -8,10 +8,16 @@ app.config['SECRET_KEY'] = ' dhuiqwhfudeiwf fewjfhiewf'
 
 
 
+
+@app.route('/base')
+def base():
+    return render_template('base.html')
+
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('base.html')
+    return render_template('home.html')
+
 
 @app.route('/login')
 def login():
