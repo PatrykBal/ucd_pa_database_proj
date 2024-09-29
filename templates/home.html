@@ -5,6 +5,7 @@
 
 {% block body %}
 
+<!-- HERO SECTION -->
 <div class="hero-container">
 
     <video autoplay loop muted plays-inline class="background-clip">
@@ -13,13 +14,37 @@
 
     <div class="content">
         <h1>Welcome to Vera</h1>
-        <a href="#">Start Shopping</a>
+        <a href="#men-women">Start Shopping</a>
 
     </div>
     
-
-
-
 </div>
 
+<!-- SECTION 1 -->
+
+<div class="section1" id="men-women">
+    <div class="section1-imgs">
+        <a target="#" href="#">
+        <img src="{{ url_for('static', filename='images/section1-female.jpg') }}" alt="woman modelling ">
+        </a>
+        <div class="description">
+            <p>Go to women's fashion</p>
+        </div>
+        <div class="description2">
+            <p>Women</p>
+        </div>
+    </div>
+
+    <div class="section1-imgs">
+        <a target="#" href="#">
+        <img src="{{ url_for('static', filename='images/section1-male.jpg') }}" alt="man modelling ">
+        </a>
+        <div class="description">
+            <p>Go to men's fashion</p>
+        </div>
+        <div class="description2">
+            <p>Men</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
