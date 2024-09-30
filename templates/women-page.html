@@ -5,6 +5,157 @@
 
 {% block body %}
 
+<!-- IMAGE SLIDER -->
+<div class="slider-body">
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1" checked>
+            <input type="radio" name="radio-btn" id="radio2">
+
+            <div class="slide first">
+                <img src="{{ url_for('static', filename='images/woman-slider2.jpg') }}" alt="">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/woman-slider1.jpg') }}" alt="">
+            </div>
+
+            <div class="slide-text">
+                <h1>Women's Fashion</h1>
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+            </div>
+
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- SECTION 1-->
+
+<div class ="container text-center shop-item" id="shop-men">
+    <div class="row" style=" margin: 8px; background-color: #ccc;" id="column">
+
+        <div class="col" style="background-color: #ffffff;">
+            <img src="{{ url_for('static', filename='images/woman-item1.jpg') }} " alt="" style="height: 360px; width: 280px; border-radius: 10px;">
+
+            <div class="row" style="margin-top: 5px;">
+                <h6 style="color: #000000;"> Cardigan </h6>
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+
+                <div class="col">
+
+                    <h5 style="font-weight: 600; font-family: Arial, Helvetica, sans-serif;">€ 45 </h5>
+                    <strike><p style="color: #ccc;">€ 50</p></strike>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="btn btn-secondary">Add</a>
+                </div>
+
+            </div>    
+
+            <div class="row">
+                <p> 10 Items left</p>
+            </div>
+
+        
+        </div>    
+
+        <div class="col" style="background-color: #ffffff;">
+            <img src="{{ url_for('static', filename='images/woman-item2.jpg') }} " alt="" style="height: 360px; width: 280px; border-radius: 10px;">
+
+            <div class="row" style="margin-top: 5px;">
+                <h6 style="color: #000000;"> Pants </h6>
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+
+                <div class="col">
+
+                    <h5 style="font-weight: 600; font-family: Arial, Helvetica, sans-serif;">€ 50 </h5>
+                    <strike><p style="color: #ccc;">€ 60</p></strike>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="btn btn-secondary">Add</a>
+                </div>
+
+            </div>    
+
+            <div class="row">
+                <p> 10 Items left</p>
+            </div>
+
+        
+        </div>    
+
+        <div class="col" style="background-color: #ffffff;">
+            <img src="{{ url_for('static', filename='images/woman-item3.jpg') }} " alt="" style="height: 360px; width: 280px; border-radius: 10px;">
+
+            <div class="row" style="margin-top: 5px;">
+                <h6 style="color: #000000;"> Dress </h6>
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+
+                <div class="col">
+
+                    <h5 style="font-weight: 600; font-family: Arial, Helvetica, sans-serif;">€ 70 </h5>
+                    <strike><p style="color: #ccc;">€ 90</p></strike>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="btn btn-secondary">Add</a>
+                </div>
+
+            </div>    
+
+            <div class="row">
+                <p> 10 Items left</p>
+            </div>
+
+        
+        </div>    
+
+        <div class="col" style="background-color: #ffffff;">
+            <img src="{{ url_for('static', filename='images/woman-item4.jpg') }} " alt="" style="height: 360px; width: 280px; border-radius: 10px;">
+
+            <div class="row" style="margin-top: 5px;">
+                <h6 style="color: #000000;">Jacket</h6>
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+
+                <div class="col">
+
+                    <h5 style="font-weight: 600; font-family: Arial, Helvetica, sans-serif;">€ 80 </h5>
+                    <strike><p style="color: #ccc;">€ 100</p></strike>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="btn btn-secondary">Add</a>
+                </div>
+
+            </div>    
+
+            <div class="row">
+                <p> 10 Items left</p>
+            </div>
+
+        
+        </div>    
+
+    </div>       
+</div>
 
 
 {% endblock %}

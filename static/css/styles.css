@@ -116,7 +116,7 @@
     cursor: pointer;
 }
 
-/* SLIDER */
+/* MEN/WOMEN-PAGE SLIDER */
 
 .slider-body {
     margin: 0;
@@ -169,7 +169,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    
+
 }
 
 .slide-text a {
@@ -238,4 +238,29 @@
 
 #radio2:checked ~ .navigation-auto .auto-btn2 {
     background: #ffffff;
+}
+
+/* MEN/WOMEN-PAGE SECTION1 */
+
+.shop-item {
+    margin-top: 270px;
+    height: 70vh;
+}
+
+.container .row .col .row .col a {
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+
+}
+
+.container .row .col .row .col a :hover {
+    background-color: rgb(204, 204, 204);
+}
+#column :hover{
+    transform: scale(0.9);
+    transition: 450ms;
+    border-radius: 10px;
 }
