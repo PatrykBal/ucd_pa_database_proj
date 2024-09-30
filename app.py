@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from routes.forms import LoginForm, SignUpForm
 
 
 from models import  Customer, Product, Cart, Order , db
@@ -36,11 +37,14 @@ def women():
 
 @app.route('/login')
 def login():
-    return ' This is the login page'
+    form = LoginForm()
+    return render_template('login.html', form=form)
 
 @app.route('/sign-up')
 def sign_up():
-    return ' This is the sign-up page'
+    form = SignUpForm()
+
+    return render_template('signup.html', form=form)
 
 
 
