@@ -1,11 +1,18 @@
 from flask import Flask, render_template
 
 
+from models import  Customer, Product, Cart, Order , db
+
+
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = ' dhuiqwhfudeiwf fewjfhiewf'
+app.config.from_object('config')
 
 
+with app.app_context():
+     db.init_app(app)  
+     db.create_all()
+     print('Database Created')  
 
 
 
