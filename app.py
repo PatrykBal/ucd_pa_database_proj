@@ -18,6 +18,14 @@ def base():
 def home():
     return render_template('home.html')
 
+@app.route('/men')
+def men():
+    return render_template('men-page.html')
+
+@app.route('/women')
+def women():
+    return render_template('women-page.html')
+
 
 @app.route('/login')
 def login():

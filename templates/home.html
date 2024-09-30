@@ -24,24 +24,24 @@
 
 <div class="section1" id="men-women">
     <div class="section1-imgs">
-        <a target="#" href="#">
-        <img src="{{ url_for('static', filename='images/section1-female.jpg') }}" alt="woman modelling ">
+        <a href="{{ url_for('women') }}">
+            <img src="{{ url_for('static', filename='images/section1-female.jpg') }}" alt="woman modelling ">
+            <div class="description">
+                <p>Go to women's fashion</p>
+            </div>
         </a>
-        <div class="description">
-            <p>Go to women's fashion</p>
-        </div>
         <div class="description2">
             <p>Women</p>
         </div>
     </div>
 
     <div class="section1-imgs">
-        <a target="#" href="#">
-        <img src="{{ url_for('static', filename='images/section1-male.jpg') }}" alt="man modelling ">
+        <a href="{{ url_for('men') }}">
+            <img src="{{ url_for('static', filename='images/section1-male.jpg') }}" alt="man modelling ">
+            <div class="description">
+                <p>Go to men's fashion</p>
+            </div>
         </a>
-        <div class="description">
-            <p>Go to men's fashion</p>
-        </div>
         <div class="description2">
             <p>Men</p>
         </div>

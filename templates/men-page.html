@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+
+{% block title %} Men's Fashion {% endblock %}
+
+
+{% block body %}
+
+<!-- IMAGE SLIDER -->
+<div class="slider-body">
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1" checked>
+            <input type="radio" name="radio-btn" id="radio2">
+
+            <div class="slide first">
+                <img src="{{ url_for('static', filename='images/man-slider1.jpg') }}" alt="">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/man-slider2.jpg') }}" alt="">
+            </div>
+
+            <div class="slide-text">
+                <h1>Mens Fashion</h1>
+                <a href="#men-women">Start Shopping</a>
+        
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+            </div>
+
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
