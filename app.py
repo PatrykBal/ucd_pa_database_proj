@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash, redirect
-from routes.forms import LoginForm, SignUpForm
+from routes.forms import LoginForm, SignUpForm, PasswordChangeForm
 from flask_login import login_user, login_required, logout_user
 from flask_login import LoginManager
 
@@ -119,6 +119,31 @@ def sign_up():
 
     return render_template('signup.html', form=form)
 
+
+
+@app.route('/change-password/<int:customer_id>', methods=['GET', 'POST'])
+@login_required
+def change_password(customer_id):
+    form = PasswordChangeForm()
+    customer = Customer.query.get(customer_id)
+    if form.validate_on_submit():
+        current_password = form.current_password.data
+        new_password = form.new_password.data
+        confirm_new_password = form.confirm_new_password.data
+
+        if customer.verify_password(current_password):
+            if new_password == confirm_new_password:
+                customer.password = confirm_new_password
+                db.session.commit()
+                flash('Password Updated Successfully')
+                return redirect(f'/profile/{customer.id}')
+            else:
+                flash('New Passwords do not match!!')
+
+        else:
+            flash('Current Password is Incorrect')
+
+    return render_template('change-password.html', form=form)
 
 
 
