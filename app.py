@@ -1,7 +1,8 @@
-from flask import Flask, render_template, flash, redirect
-from routes.forms import LoginForm, SignUpForm, PasswordChangeForm
-from flask_login import login_user, login_required, logout_user
+from flask import Flask, render_template, flash, redirect, send_from_directory
+from routes.forms import LoginForm, SignUpForm, PasswordChangeForm, ShopItemsForm
+from flask_login import login_user, login_required, logout_user, current_user
 from flask_login import LoginManager
+from werkzeug.utils import secure_filename
 
 from models import  Customer, Product, Cart, Order , db
 
@@ -15,6 +16,10 @@ app.config.from_object('config')
 db.init_app(app)  
     #db.create_all()
     #print('Database Created') 
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html')
 
 
 login_manager = LoginManager()
@@ -45,6 +50,67 @@ def men():
 @app.route('/women')
 def women():
     return render_template('women-page.html')
+
+#ADMIN
+
+
+@app.route('/media/<path:filename>')
+def get_image(filename):
+    return send_from_directory('media', filename)
+
+
+@app.route('/add-shop-items', methods=['GET', 'POST'])
+@login_required
+def add_shop_items():
+    if current_user.id == 1:
+        form = ShopItemsForm()
+
+        if form.validate_on_submit():
+            product_name = form.product_name.data
+            current_price = form.current_price.data
+            previous_price = form.previous_price.data
+            in_stock = form.in_stock.data
+            flash_sale = form.flash_sale.data
+
+            file = form.product_picture.data
+
+            file_name = secure_filename(file.filename)
+
+            file_path = f'./media/{file_name}'
+
+            file.save(file_path)
+
+            new_shop_item = Product()
+            new_shop_item.product_name = product_name
+            new_shop_item.current_price = current_price
+            new_shop_item.previous_price = previous_price
+            new_shop_item.in_stock = in_stock
+            new_shop_item.flash_sale = flash_sale
+
+            new_shop_item.product_picture = file_path
+
+            try:
+                db.session.add(new_shop_item)
+                db.session.commit()
+                flash(f'{product_name} added Successfully')
+                print('Product Added')
+                return render_template('add-shop-items.html', form=form)
+            except Exception as e:
+                print(e)
+                flash('Product Not Added!!')
+
+        return render_template('add-shop-items.html', form=form)
+    
+    return render_template('404.html')
+
+
+@app.route('/shop-items', methods=['GET', 'POST'])
+@login_required
+def shop_items():
+    if current_user.id == 1:
+        items = Product.query.order_by(Product.date_added).all()
+        return render_template('shop-items.html', items=items)
+    return render_template('404.html')
 
 
 
@@ -84,6 +150,7 @@ def log_out():
 @login_required
 def profile(customer_id):
     customer = Customer.query.get(customer_id)
+    print('Customer ID:', customer_id)
     return render_template('profile.html', customer=customer)
 
     
