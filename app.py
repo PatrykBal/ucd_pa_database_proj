@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash, redirect, send_from_directory, request, jsonify
-from .forms import LoginForm, SignUpForm, PasswordChangeForm, ShopItemsForm
+from forms import LoginForm, SignUpForm, PasswordChangeForm, ShopItemsForm
 from flask_login import login_user, login_required, logout_user, current_user
 from flask_login import LoginManager
 from werkzeug.utils import secure_filename
