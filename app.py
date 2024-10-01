@@ -11,10 +11,10 @@ app = Flask(__name__)
 app.config.from_object('config')
 
 
-with app.app_context():
-     db.init_app(app)  
-     db.create_all()
-     print('Database Created') 
+#with app.app_context():
+db.init_app(app)  
+    #db.create_all()
+    #print('Database Created') 
 
 
 login_manager = LoginManager()
@@ -77,6 +77,14 @@ def login():
 def log_out():
     logout_user()
     return redirect('/')
+
+
+
+@app.route('/profile/<int:customer_id>')
+@login_required
+def profile(customer_id):
+    customer = Customer.query.get(customer_id)
+    return render_template('profile.html', customer=customer)
 
     
 

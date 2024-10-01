@@ -70,7 +70,7 @@
 
                         {% if current_user.is_authenticated %}
 
-                          <li><a class="dropdown-item" href="/profile">Profile <i class="fa-solid fa-user"></i></a></li>
+                          <li><a class="dropdown-item" href="/profile/{{ current_user.id}}">Profile <i class="fa-solid fa-user"></i></a></li>
                           <li><a class="dropdown-item" href="/orders">Orders <i class="fa-solid fa-truck-fast"></i></a></li>
                           <li><a class="dropdown-item" href="/logout">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
 
@@ -86,7 +86,7 @@
           </div>
       </div>
   </nav>
-    
+  
 
   {% for message in get_flashed_messages() %}
 
@@ -95,6 +95,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   
   </div>
+  
   {% endfor %}
 
 {% block body %}
