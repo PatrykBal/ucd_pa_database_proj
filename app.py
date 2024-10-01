@@ -57,6 +57,11 @@ def women():
 
     return render_template('women-page.html', items=items)
 
+#ADD TO CART
+
+@app.route('/add-to-cart/int:item_id')
+@login_required
+
 #ADMIN
 
 
