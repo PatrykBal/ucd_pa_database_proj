@@ -42,19 +42,21 @@
 <div class ="container text-center shop-item" id="shop-men">
     <div class="row" style=" margin: 8px; background-color: #ccc;" id="column">
 
+        {% for item in items %}
+
         <div class="col" style="background-color: #ffffff;">
-            <img src="{{ url_for('static', filename='images/woman-item1.jpg') }} " alt="" style="height: 360px; width: 280px; border-radius: 10px;">
+            <img src="{{ item.product_picture }}" alt="" style="height: 360px; width: 280px; border-radius: 10px;">
 
             <div class="row" style="margin-top: 5px;">
-                <h6 style="color: #000000;"> Cardigan </h6>
+                <h6 style="color: #000000;"> {{ item.product_name }}</h6>
             </div>
 
             <div class="row" style="margin-top: 10px;">
 
                 <div class="col">
 
-                    <h5 style="font-weight: 600; font-family: Arial, Helvetica, sans-serif;">€ 45 </h5>
-                    <strike><p style="color: #ccc;">€ 50</p></strike>
+                    <h5 style="font-weight: 600; font-family: Arial, Helvetica, sans-serif;">€ {{ item.current_price }} </h5>
+                    <strike><p style="color: #ccc;">€ {{ item.previous_price }}</p></strike>
                 </div>
 
                 <div class="col">
@@ -64,95 +66,13 @@
             </div>    
 
             <div class="row">
-                <p> 10 Items left</p>
+                <p>{{ items.in_stock }} Items left</p>
             </div>
 
         
         </div>    
-
-        <div class="col" style="background-color: #ffffff;">
-            <img src="{{ url_for('static', filename='images/woman-item2.jpg') }} " alt="" style="height: 360px; width: 280px; border-radius: 10px;">
-
-            <div class="row" style="margin-top: 5px;">
-                <h6 style="color: #000000;"> Pants </h6>
-            </div>
-
-            <div class="row" style="margin-top: 10px;">
-
-                <div class="col">
-
-                    <h5 style="font-weight: 600; font-family: Arial, Helvetica, sans-serif;">€ 50 </h5>
-                    <strike><p style="color: #ccc;">€ 60</p></strike>
-                </div>
-
-                <div class="col">
-                    <a href="#" class="btn btn-secondary">Add</a>
-                </div>
-
-            </div>    
-
-            <div class="row">
-                <p> 10 Items left</p>
-            </div>
-
-        
-        </div>    
-
-        <div class="col" style="background-color: #ffffff;">
-            <img src="{{ url_for('static', filename='images/woman-item3.jpg') }} " alt="" style="height: 360px; width: 280px; border-radius: 10px;">
-
-            <div class="row" style="margin-top: 5px;">
-                <h6 style="color: #000000;"> Dress </h6>
-            </div>
-
-            <div class="row" style="margin-top: 10px;">
-
-                <div class="col">
-
-                    <h5 style="font-weight: 600; font-family: Arial, Helvetica, sans-serif;">€ 70 </h5>
-                    <strike><p style="color: #ccc;">€ 90</p></strike>
-                </div>
-
-                <div class="col">
-                    <a href="#" class="btn btn-secondary">Add</a>
-                </div>
-
-            </div>    
-
-            <div class="row">
-                <p> 10 Items left</p>
-            </div>
-
-        
-        </div>    
-
-        <div class="col" style="background-color: #ffffff;">
-            <img src="{{ url_for('static', filename='images/woman-item4.jpg') }} " alt="" style="height: 360px; width: 280px; border-radius: 10px;">
-
-            <div class="row" style="margin-top: 5px;">
-                <h6 style="color: #000000;">Jacket</h6>
-            </div>
-
-            <div class="row" style="margin-top: 10px;">
-
-                <div class="col">
-
-                    <h5 style="font-weight: 600; font-family: Arial, Helvetica, sans-serif;">€ 80 </h5>
-                    <strike><p style="color: #ccc;">€ 100</p></strike>
-                </div>
-
-                <div class="col">
-                    <a href="#" class="btn btn-secondary">Add</a>
-                </div>
-
-            </div>    
-
-            <div class="row">
-                <p> 10 Items left</p>
-            </div>
-
-        
-        </div>    
+   
+        {% endfor %}
 
     </div>       
 </div>

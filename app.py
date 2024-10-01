@@ -45,11 +45,17 @@ def home():
 
 @app.route('/men')
 def men():
-    return render_template('men-page.html')
+
+    items = Product.query.filter_by(flash_sale=True)
+
+    return render_template('men-page.html', items=items)
 
 @app.route('/women')
 def women():
-    return render_template('women-page.html')
+
+    items = Product.query.filter_by(flash_sale=False)
+
+    return render_template('women-page.html', items=items)
 
 #ADMIN
 
