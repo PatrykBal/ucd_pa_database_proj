@@ -12,7 +12,7 @@ class Customer(db.Model, UserMixin):
     email = db.Column(db.String(100), unique=True)
     username = db.Column(db.String(100))
     password_hash = db.Column(db.String(150))
-    date_joined = db.Column(db.DateTime(), default=lambda: datetime.now(timezone.utc))
+    date_joined = db.Column(db.DateTime(), default= datetime.utcnow)
 
     cart_items = db.relationship('Cart', backref=db.backref('customer', lazy=True))
     orders = db.relationship('Order', backref=db.backref('customer', lazy=True))
@@ -40,7 +40,7 @@ class Product(db.Model):
     in_stock = db.Column(db.Integer, nullable=False)
     product_picture = db.Column(db.String(1000), nullable=False)
     flash_sale = db.Column(db.Boolean, default=False)
-    date_added = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
+    date_added = db.Column(db.DateTime, default= datetime.utcnow)
 
     carts = db.relationship('Cart', backref=db.backref('product', lazy=True))
     orders = db.relationship('Order', backref=db.backref('product', lazy=True))
